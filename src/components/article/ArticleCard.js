@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 class ArticleCard extends React.Component {
@@ -7,11 +8,17 @@ class ArticleCard extends React.Component {
     return (
       <Card style={{ marginTop: "1em" }}>
         <Card.Body>
-          <Card.Title>{article.title || "No title"}</Card.Title>
+          <Link
+            to={`/articles/${article.id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <Card.Title>{article.title || "No title"}</Card.Title>
+          </Link>
           <Card.Text>{article.body}</Card.Text>
         </Card.Body>
+
         <Card.Footer className="text-muted">
-          {new Date(article.createDate).toLocaleTimeString()}
+          {new Date(article.createDate).toLocaleString()}
         </Card.Footer>
       </Card>
     );
