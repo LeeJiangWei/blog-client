@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 
 class InfoCard extends React.Component {
   render() {
     return (
-      <Card style={{ marginTop: "1em" }}>
+      <Card>
         <Card.Header>About</Card.Header>
         <Card.Img
           varient="top"
@@ -13,7 +14,9 @@ class InfoCard extends React.Component {
           }
         />
         <Card.Body>
-          <Button variant="primary">New Article</Button>
+          <Button variant="primary" as={Link} to="/articles/new">
+            New Article
+          </Button>
         </Card.Body>
       </Card>
     );

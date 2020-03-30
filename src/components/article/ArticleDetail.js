@@ -41,7 +41,7 @@ class ArticleDetail extends React.Component {
     const { id } = this.state.article;
     try {
       const { data } = await axios.delete(`/articles/${id}`);
-      this.props.history.goBack();
+      this.props.history.push("/articles");
     } catch (e) {}
   };
 
@@ -88,7 +88,11 @@ class ArticleDetail extends React.Component {
         <Button variant="outline-primary" onClick={this.onSubmitButtonClicked}>
           提交
         </Button>
-        <Button style={{ marginLeft: "1em" }} variant="outline-secondary">
+        <Button
+          style={{ marginLeft: "1em" }}
+          variant="outline-secondary"
+          onClick={() => this.setState({ isEditing: false })}
+        >
           取消
         </Button>
       </Form>
