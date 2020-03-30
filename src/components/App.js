@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Header from "./Header";
 import Articles from "./article";
+import ArticleDetail from "./article/ArticleDetail";
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={Articles} />
           <Route path="/articles" exact component={Articles} />
+          <Route path="/articles/:articleId" exact component={ArticleDetail} />
         </Switch>
       </HashRouter>
     );

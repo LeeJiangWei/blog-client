@@ -1,13 +1,21 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 import ArticleList from "./ArticleList";
+import InfoCard from "./InfoCard";
 
 class Articles extends React.Component {
   render() {
     return (
       <Container>
-        <ArticleList />
+        <Row>
+          <Col xl={9}>
+            <ArticleList />
+          </Col>
+          <Col>
+            <InfoCard />
+          </Col>
+        </Row>
       </Container>
     );
   }

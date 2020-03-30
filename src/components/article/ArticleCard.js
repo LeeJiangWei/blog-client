@@ -6,7 +6,7 @@ class ArticleCard extends React.Component {
   render() {
     const { article } = this.props;
     return (
-      <Card style={{ marginTop: "1em" }}>
+      <Card style={{ marginBottom: "1em" }}>
         <Card.Body>
           <Link
             to={`/articles/${article.id}`}
@@ -14,9 +14,7 @@ class ArticleCard extends React.Component {
           >
             <Card.Title>{article.title || "No title"}</Card.Title>
           </Link>
-          <Card.Text>{article.body}</Card.Text>
         </Card.Body>
-
         <Card.Footer className="text-muted">
           {new Date(article.createDate).toLocaleString()}
         </Card.Footer>
